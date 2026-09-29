@@ -1,15 +1,15 @@
 import React from 'react';
-import { Search, Calendar, Heart, Flame, ArrowRight } from 'lucide-react';
+import { Calendar, Heart, Flame, ArrowRight } from 'lucide-react';
 import { SEOUL_IMAGES } from '../data/images';
 
 interface HeroProps {
-  onSearchClick: () => void;
+  onSearchClick?: () => void;
   onAskQuery?: (query: string) => void;
   onNavigate: (section: string) => void;
   onSelectNeighbourhood?: (id: string) => void;
 }
 
-export const Hero: React.FC<HeroProps> = ({ onSearchClick, onNavigate }) => {
+export const Hero: React.FC<HeroProps> = ({ onNavigate }) => {
   const quickCategories = [
     { id: 'itinerary', label: 'Itinerary', icon: '🗓️', desc: '8–16 Dec (9 Days)', highlight: true },
     { id: 'eat', label: 'Eat', icon: '🍜', desc: 'Black pork & BBQ' },
@@ -84,20 +84,10 @@ export const Hero: React.FC<HeroProps> = ({ onSearchClick, onNavigate }) => {
             <div className="pt-2 flex flex-col sm:flex-row gap-2.5">
               <button
                 onClick={() => onNavigate('itinerary')}
-                className="bg-rose-600 hover:bg-rose-700 text-white px-5 py-3 rounded-2xl text-xs sm:text-sm font-bold shadow-md flex items-center justify-center gap-2 cursor-pointer transition-all hover:scale-102"
+                className="bg-rose-600 hover:bg-rose-700 text-white px-6 py-3 rounded-2xl text-xs sm:text-sm font-bold shadow-md flex items-center justify-center gap-2 cursor-pointer transition-all hover:scale-102"
               >
                 <Calendar className="w-4 h-4" />
                 <span>Open 9-Day Family Itinerary (8–16 Dec) 🗓️</span>
-              </button>
-
-              <button
-                onClick={onSearchClick}
-                className="bg-white/95 text-stone-800 hover:bg-white rounded-2xl shadow-md px-4 py-3 flex items-center gap-2.5 cursor-pointer transition-all border border-stone-200/50 text-xs sm:text-sm font-medium hover:scale-102"
-              >
-                <Search className="w-4 h-4 text-stone-500 shrink-0" />
-                <span className="text-stone-700">
-                  Search places, food, districts & shopping directory
-                </span>
               </button>
             </div>
           </div>

@@ -86,7 +86,6 @@ export default function App() {
       <Header
         activeTab={activeTab}
         onTabChange={handleNavigate}
-        onOpenSearch={() => setIsSearchOpen(true)}
       />
 
       {/* Main Body */}
@@ -95,7 +94,6 @@ export default function App() {
           <div>
             {/* Visual Hero */}
             <Hero
-              onSearchClick={() => setIsSearchOpen(true)}
               onNavigate={handleNavigate}
               onSelectNeighbourhood={(id) => {
                 setSelectedNeighbourhoodId(id);

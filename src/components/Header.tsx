@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
-import { Search, Menu, X, Calendar, Heart } from 'lucide-react';
+import { Menu, X, Calendar, Heart } from 'lucide-react';
 
 interface HeaderProps {
   activeTab: string;
   onTabChange: (tab: string) => void;
-  onOpenSearch: () => void;
+  onOpenSearch?: () => void;
   onOpenAiGuide?: (initialQuery?: string) => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
   activeTab,
   onTabChange,
-  onOpenSearch,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -107,18 +106,6 @@ export const Header: React.FC<HeaderProps> = ({
             >
               <span>🗓️</span>
               <span>Itinerary</span>
-            </button>
-
-            <button
-              onClick={onOpenSearch}
-              className="px-2.5 sm:px-3 py-1.5 text-stone-700 bg-stone-100 hover:bg-stone-200 rounded-full transition-colors cursor-pointer text-xs font-medium flex items-center gap-1.5"
-              title="Search Guide"
-            >
-              <Search className="w-3.5 h-3.5 text-stone-500" />
-              <span className="hidden sm:inline">Search</span>
-              <kbd className="hidden md:inline text-[9px] bg-white text-stone-400 border border-stone-200 px-1 py-0.2 rounded font-mono">
-                ⌘K
-              </kbd>
             </button>
 
             {/* Mobile Hamburger Button */}
