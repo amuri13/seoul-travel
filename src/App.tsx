@@ -7,10 +7,6 @@ import { EatSection } from './components/EatSection';
 import { ShopSection } from './components/ShopSection';
 import { NeighbourhoodSection } from './components/NeighbourhoodSection';
 import { ExploreSection } from './components/ExploreSection';
-import { TransportSection } from './components/TransportSection';
-import { EssentialsSection } from './components/EssentialsSection';
-import { CultureSection } from './components/CultureSection';
-import { TipsSection } from './components/TipsSection';
 import { AiGuideModal } from './components/AiGuideModal';
 import { PlaceDetailModal } from './components/PlaceDetailModal';
 import { Footer } from './components/Footer';
@@ -509,65 +505,6 @@ export default function App() {
                   ))}
                 </div>
               </div>
-
-              {/* 4. Visual Transit & Etiquette Action Tiles */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                <div
-                  onClick={() => handleNavigate('transport')}
-                  className="relative rounded-3xl overflow-hidden shadow-xs border border-stone-200 bg-stone-900 text-white p-6 sm:p-8 flex flex-col justify-end min-h-[200px] cursor-pointer group hover:shadow-md transition-all"
-                >
-                  <img
-                    src={SEOUL_IMAGES.metroTransit}
-                    alt="Seoul Metro"
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-stone-950/95 via-stone-950/60 to-stone-950/20" />
-
-                  <div className="relative z-10 space-y-2">
-                    <span className="text-[11px] uppercase tracking-wider text-emerald-400 font-bold">
-                      Transit & Flight Tips 🚇
-                    </span>
-                    <h3 className="text-xl sm:text-2xl font-serif font-bold text-white group-hover:text-emerald-200 transition-colors">
-                      AREX, Domestic Flights & T-Money Card
-                    </h3>
-                    <p className="text-xs text-stone-300 line-clamp-2">
-                      Incheon to Gimpo AREX train, Jeju rental car navigation, and Seoul metro line transfers.
-                    </p>
-                    <div className="pt-1 flex items-center gap-1 text-xs font-bold text-emerald-300">
-                      <span>Open Transit Manual</span>
-                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </div>
-                </div>
-
-                <div
-                  onClick={() => handleNavigate('tips')}
-                  className="relative rounded-3xl overflow-hidden shadow-xs border border-stone-200 bg-stone-900 text-white p-6 sm:p-8 flex flex-col justify-end min-h-[200px] cursor-pointer group hover:shadow-md transition-all"
-                >
-                  <img
-                    src={SEOUL_IMAGES.bukchonHanok}
-                    alt="Bukchon Hanok"
-                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-stone-950/95 via-stone-950/60 to-stone-950/20" />
-
-                  <div className="relative z-10 space-y-2">
-                    <span className="text-[11px] uppercase tracking-wider text-amber-400 font-bold">
-                      December Winter Guide ❄️
-                    </span>
-                    <h3 className="text-xl sm:text-2xl font-serif font-bold text-white group-hover:text-amber-200 transition-colors">
-                      Packing, Hot-Paek & Korea Apps
-                    </h3>
-                    <p className="text-xs text-stone-300 line-clamp-2">
-                      Sub-zero Seoul weather gear, Jeju coastal winds, Naver Map essentials, and Papago camera translation.
-                    </p>
-                    <div className="pt-1 flex items-center gap-1 text-xs font-bold text-amber-300">
-                      <span>View Packing & App Tips</span>
-                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         )}
@@ -609,14 +546,6 @@ export default function App() {
             }}
           />
         )}
-
-        {activeTab === 'transport' && <TransportSection />}
-
-        {activeTab === 'essentials' && <EssentialsSection />}
-
-        {activeTab === 'culture' && <CultureSection />}
-
-        {activeTab === 'tips' && <TipsSection />}
       </main>
 
       {/* Global Interactive Search Overlay */}

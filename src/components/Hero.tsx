@@ -17,9 +17,6 @@ export const Hero: React.FC<HeroProps> = ({ onSearchClick, onAskQuery, onNavigat
     { id: 'shop', label: 'Shop', icon: '🛍️', desc: 'Olive Young & Lotte' },
     { id: 'neighbourhoods', label: 'Districts', icon: '🏙️', desc: 'Myeongdong & Seongsu' },
     { id: 'explore', label: 'Explore', icon: '✨', desc: 'Jeju & Seoul sites' },
-    { id: 'transport', label: 'Transit', icon: '🚇', desc: 'AREX, flights & subway' },
-    { id: 'essentials', label: 'Essentials', icon: '🎒', desc: 'eSIM, cash & tax refunds' },
-    { id: 'tips', label: 'Tips', icon: '💡', desc: 'Winter gear & apps' },
   ];
 
   // Visual quick vibe cards tailored to family trip
@@ -141,7 +138,7 @@ export const Hero: React.FC<HeroProps> = ({ onSearchClick, onAskQuery, onNavigat
             <span className="text-[11px] text-stone-400">One tap to open</span>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-2.5">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
             {quickCategories.map((cat) => (
               <button
                 key={cat.id}

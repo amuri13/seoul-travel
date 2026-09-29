@@ -23,10 +23,6 @@ export const Header: React.FC<HeaderProps> = ({
     { id: 'shop', label: 'Shop', icon: '🛍️' },
     { id: 'neighbourhoods', label: 'Districts', icon: '🏙️' },
     { id: 'explore', label: 'Explore', icon: '✨' },
-    { id: 'transport', label: 'Transit', icon: '🚇' },
-    { id: 'essentials', label: 'Essentials', icon: '🎒' },
-    { id: 'culture', label: 'Etiquette', icon: '🎎' },
-    { id: 'tips', label: 'Tips', icon: '💡' },
   ];
 
   return (
@@ -79,9 +75,9 @@ export const Header: React.FC<HeaderProps> = ({
             })}
           </nav>
 
-          {/* Tablet Nav Links (condensed) */}
+          {/* Tablet Nav Links */}
           <div className="hidden lg:flex xl:hidden items-center gap-1 text-xs font-medium text-stone-600">
-            {navLinks.slice(0, 5).map((link) => {
+            {navLinks.map((link) => {
               const isActive = activeTab === link.id;
               return (
                 <button

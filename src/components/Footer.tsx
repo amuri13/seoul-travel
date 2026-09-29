@@ -10,9 +10,9 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenAiGuide }) => 
   return (
     <footer className="bg-stone-900 text-stone-300 border-t border-stone-800 pt-12 pb-16 text-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand Col */}
-          <div className="space-y-3 md:col-span-1">
+          <div className="space-y-3">
             <span className="text-lg font-serif font-bold text-white tracking-tight">
               Seoul & Jeju Family Guide
             </span>
@@ -51,35 +51,6 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenAiGuide }) => 
               <li>
                 <button onClick={() => onNavigate('explore')} className="hover:text-white transition-colors cursor-pointer">
                   Explore by Travel Interests
-                </button>
-              </li>
-            </ul>
-          </div>
-
-          {/* Practical Links */}
-          <div className="space-y-2">
-            <div className="font-semibold uppercase tracking-wider text-stone-200 text-[11px]">
-              Practical Intelligence
-            </div>
-            <ul className="space-y-1.5 text-stone-400">
-              <li>
-                <button onClick={() => onNavigate('transport')} className="hover:text-white transition-colors cursor-pointer">
-                  Airport, Subway & Transit Cards
-                </button>
-              </li>
-              <li>
-                <button onClick={() => onNavigate('essentials')} className="hover:text-white transition-colors cursor-pointer">
-                  eSIM, Cards & Tax Refunds
-                </button>
-              </li>
-              <li>
-                <button onClick={() => onNavigate('culture')} className="hover:text-white transition-colors cursor-pointer">
-                  Restaurant Etiquette & Phrasebook
-                </button>
-              </li>
-              <li>
-                <button onClick={() => onNavigate('tips')} className="hover:text-white transition-colors cursor-pointer">
-                  Winter & Summer Survival Rules
                 </button>
               </li>
             </ul>
