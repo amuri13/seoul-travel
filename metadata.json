@@ -1,0 +1,6 @@
+{
+  "name": "Seoul Travel Guide",
+  "description": "An interactive, curated travel handbook for discovering Seoul's food, shopping, neighbourhoods, transit, and culture.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
