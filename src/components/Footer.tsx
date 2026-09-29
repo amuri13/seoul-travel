@@ -3,10 +3,10 @@ import { Compass, ShieldCheck } from 'lucide-react';
 
 interface FooterProps {
   onNavigate: (section: string) => void;
-  onOpenAiGuide: () => void;
+  onOpenAiGuide?: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenAiGuide }) => {
+export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   return (
     <footer className="bg-stone-900 text-stone-300 border-t border-stone-800 pt-12 pb-16 text-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
@@ -56,21 +56,15 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenAiGuide }) => 
             </ul>
           </div>
 
-          {/* Sources & AI Guide */}
+          {/* Sources & Official Guidance */}
           <div className="space-y-3">
             <div className="font-semibold uppercase tracking-wider text-stone-200 text-[11px]">
               Official Sources & Guidance
             </div>
             <p className="text-stone-400 leading-relaxed text-[11px]">
               Factual data curated from Korea Tourism Organization (KTO), Seoul Metropolitan Government,
-              Seoul Metro, Michelin Guide Seoul, and direct field verification.
+              Seoul Metro, Michelin Guide Seoul, and direct family field verification.
             </p>
-            <button
-              onClick={onOpenAiGuide}
-              className="px-3 py-1.5 bg-stone-800 hover:bg-stone-700 text-stone-100 rounded-lg text-xs font-medium transition-colors cursor-pointer flex items-center gap-1.5"
-            >
-              <span>Ask AI Guide Assistant</span>
-            </button>
           </div>
         </div>
 

@@ -1,16 +1,15 @@
 import React from 'react';
-import { Search, Sparkles, Utensils, ShoppingBag, MapPin, Compass, Train, ShieldCheck, BookOpen, Lightbulb, ArrowRight, Flame, Calendar, Heart } from 'lucide-react';
-import { SUGGESTED_QUERIES } from '../services/searchService';
+import { Search, Calendar, Heart, Flame, ArrowRight } from 'lucide-react';
 import { SEOUL_IMAGES } from '../data/images';
 
 interface HeroProps {
   onSearchClick: () => void;
-  onAskQuery: (query: string) => void;
+  onAskQuery?: (query: string) => void;
   onNavigate: (section: string) => void;
   onSelectNeighbourhood?: (id: string) => void;
 }
 
-export const Hero: React.FC<HeroProps> = ({ onSearchClick, onAskQuery, onNavigate }) => {
+export const Hero: React.FC<HeroProps> = ({ onSearchClick, onNavigate }) => {
   const quickCategories = [
     { id: 'itinerary', label: 'Itinerary', icon: '🗓️', desc: '8–16 Dec (9 Days)', highlight: true },
     { id: 'eat', label: 'Eat', icon: '🍜', desc: 'Black pork & BBQ' },
@@ -91,40 +90,15 @@ export const Hero: React.FC<HeroProps> = ({ onSearchClick, onAskQuery, onNavigat
                 <span>Open 9-Day Family Itinerary (8–16 Dec) 🗓️</span>
               </button>
 
-              <div
+              <button
                 onClick={onSearchClick}
-                className="flex-1 bg-white/95 text-stone-800 hover:bg-white rounded-2xl shadow-md px-3.5 py-2.5 flex items-center justify-between gap-3 cursor-pointer transition-all border border-stone-200/50"
+                className="bg-white/95 text-stone-800 hover:bg-white rounded-2xl shadow-md px-4 py-3 flex items-center gap-2.5 cursor-pointer transition-all border border-stone-200/50 text-xs sm:text-sm font-medium hover:scale-102"
               >
-                <div className="flex items-center gap-2.5 overflow-hidden">
-                  <Search className="w-4 h-4 text-stone-500 shrink-0" />
-                  <span className="text-xs text-stone-500 truncate">
-                    Search places, dishes, tips, or itinerary stops...
-                  </span>
-                </div>
-                <div className="flex items-center gap-1 shrink-0 bg-stone-900 text-white px-2.5 py-1 rounded-xl text-xs font-semibold">
-                  <Sparkles className="w-3 h-3 text-amber-300" />
-                  <span>Ask AI</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Quick Question Chips */}
-            <div className="pt-1 flex flex-wrap items-center gap-2 text-xs">
-              <span className="text-stone-300 text-[11px] font-medium uppercase tracking-wider">Family Quick Qs:</span>
-              {[
-                'What should we wear in Jeju & Seoul in Dec?',
-                'Where to eat black pork in Jeju?',
-                'Best bakeries in Seongsu?',
-                'How to get to Tosokchon Samgyetang early?'
-              ].map((q, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => onAskQuery(q)}
-                  className="bg-black/40 hover:bg-white/20 border border-white/25 text-stone-200 hover:text-white px-3 py-1 rounded-full text-xs transition-all text-left cursor-pointer flex items-center gap-1"
-                >
-                  <span>"{q}"</span>
-                </button>
-              ))}
+                <Search className="w-4 h-4 text-stone-500 shrink-0" />
+                <span className="text-stone-700">
+                  Search places, food, districts & shopping directory
+                </span>
+              </button>
             </div>
           </div>
         </div>

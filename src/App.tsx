@@ -7,7 +7,6 @@ import { EatSection } from './components/EatSection';
 import { ShopSection } from './components/ShopSection';
 import { NeighbourhoodSection } from './components/NeighbourhoodSection';
 import { ExploreSection } from './components/ExploreSection';
-import { AiGuideModal } from './components/AiGuideModal';
 import { PlaceDetailModal } from './components/PlaceDetailModal';
 import { Footer } from './components/Footer';
 
@@ -22,8 +21,6 @@ import { ArrowRight, Sparkles, MapPin, Utensils, ShoppingBag, Train, BookOpen, E
 export default function App() {
   const [activeTab, setActiveTab] = useState<string>('home');
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
-  const [isAiGuideOpen, setIsAiGuideOpen] = useState<boolean>(false);
-  const [aiGuideQuery, setAiGuideQuery] = useState<string>('');
 
   const [selectedDetailItem, setSelectedDetailItem] = useState<Place | Shop | null>(null);
   const [detailType, setDetailType] = useState<'place' | 'shop'>('place');
@@ -49,11 +46,6 @@ export default function App() {
   const handleNavigate = (tab: string) => {
     setActiveTab(tab);
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  const handleOpenAiWithQuery = (query: string) => {
-    setAiGuideQuery(query);
-    setIsAiGuideOpen(true);
   };
 
   const openPlaceDetail = (place: Place) => {
@@ -95,10 +87,6 @@ export default function App() {
         activeTab={activeTab}
         onTabChange={handleNavigate}
         onOpenSearch={() => setIsSearchOpen(true)}
-        onOpenAiGuide={() => {
-          setAiGuideQuery('');
-          setIsAiGuideOpen(true);
-        }}
       />
 
       {/* Main Body */}
@@ -108,7 +96,6 @@ export default function App() {
             {/* Visual Hero */}
             <Hero
               onSearchClick={() => setIsSearchOpen(true)}
-              onAskQuery={handleOpenAiWithQuery}
               onNavigate={handleNavigate}
               onSelectNeighbourhood={(id) => {
                 setSelectedNeighbourhoodId(id);
@@ -558,25 +545,6 @@ export default function App() {
           setSelectedNeighbourhoodId(n.id);
           setActiveTab('neighbourhoods');
         }}
-        onAskAi={(query: string) => {
-          setIsSearchOpen(false);
-          setAiGuideQuery(query);
-          setIsAiGuideOpen(true);
-        }}
-      />
-
-      {/* Natural Language AI Guide Modal */}
-      <AiGuideModal
-        isOpen={isAiGuideOpen}
-        onClose={() => setIsAiGuideOpen(false)}
-        initialQuery={aiGuideQuery}
-        onSelectPlace={openPlaceDetail}
-        onSelectShop={openShopDetail}
-        onSelectNeighbourhood={(n) => {
-          setSelectedNeighbourhoodId(n.id);
-          setActiveTab('neighbourhoods');
-          setIsAiGuideOpen(false);
-        }}
       />
 
       {/* Place / Shop Comprehensive Detail Modal */}
@@ -590,10 +558,6 @@ export default function App() {
       {/* Footer */}
       <Footer
         onNavigate={handleNavigate}
-        onOpenAiGuide={() => {
-          setAiGuideQuery('');
-          setIsAiGuideOpen(true);
-        }}
       />
     </div>
   );

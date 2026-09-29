@@ -1,18 +1,17 @@
 import React, { useState } from 'react';
-import { Search, Sparkles, Menu, X, Calendar, Heart } from 'lucide-react';
+import { Search, Menu, X, Calendar, Heart } from 'lucide-react';
 
 interface HeaderProps {
   activeTab: string;
   onTabChange: (tab: string) => void;
   onOpenSearch: () => void;
-  onOpenAiGuide: (initialQuery?: string) => void;
+  onOpenAiGuide?: (initialQuery?: string) => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({
   activeTab,
   onTabChange,
   onOpenSearch,
-  onOpenAiGuide,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -120,14 +119,6 @@ export const Header: React.FC<HeaderProps> = ({
               <kbd className="hidden md:inline text-[9px] bg-white text-stone-400 border border-stone-200 px-1 py-0.2 rounded font-mono">
                 ⌘K
               </kbd>
-            </button>
-
-            <button
-              onClick={() => onOpenAiGuide()}
-              className="px-3 py-1.5 bg-gradient-to-r from-rose-500 to-amber-500 hover:from-rose-600 hover:to-amber-600 text-white rounded-full text-xs font-semibold shadow-xs flex items-center gap-1.5 cursor-pointer transition-all hover:shadow-sm hover:scale-[1.02]"
-            >
-              <Sparkles className="w-3.5 h-3.5 text-white animate-pulse" />
-              <span>Ask AI</span>
             </button>
 
             {/* Mobile Hamburger Button */}

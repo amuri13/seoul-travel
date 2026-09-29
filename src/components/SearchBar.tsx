@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Search, X, Sparkles, MapPin, Utensils, ShoppingBag, Train, ArrowRight } from 'lucide-react';
-import { performClientSearch, SUGGESTED_QUERIES, SearchResults } from '../services/searchService';
+import { Search, X, MapPin, Utensils, ShoppingBag, ArrowRight } from 'lucide-react';
+import { performClientSearch, SearchResults } from '../services/searchService';
 import { Place, Shop, Neighbourhood } from '../types';
 import { SEOUL_IMAGES, getImageForCategory } from '../data/images';
 
@@ -10,7 +10,7 @@ interface SearchBarProps {
   onSelectPlace: (place: Place) => void;
   onSelectShop: (shop: Shop) => void;
   onSelectNeighbourhood: (neighbourhood: Neighbourhood) => void;
-  onAskAi: (query: string) => void;
+  onAskAi?: (query: string) => void;
 }
 
 export const SearchBar: React.FC<SearchBarProps> = ({
@@ -19,7 +19,6 @@ export const SearchBar: React.FC<SearchBarProps> = ({
   onSelectPlace,
   onSelectShop,
   onSelectNeighbourhood,
-  onAskAi,
 }) => {
   const [query, setQuery] = useState('');
   const [results, setResults] = useState<SearchResults | null>(null);
@@ -75,61 +74,41 @@ export const SearchBar: React.FC<SearchBarProps> = ({
           </button>
         </div>
 
-        {/* AI Guide Handover Bar */}
-        {query.trim().length > 1 && (
-          <div className="bg-rose-50 border-b border-rose-100 px-4 py-2.5 flex items-center justify-between text-xs text-rose-950">
-            <div className="flex items-center gap-2">
-              <Sparkles className="w-4 h-4 text-rose-600 shrink-0" />
-              <span>Ask Seoul AI Guide for an instant local answer:</span>
-            </div>
-            <button
-              onClick={() => {
-                onAskAi(query);
-                onClose();
-              }}
-              className="font-bold text-rose-700 hover:text-rose-900 flex items-center gap-1 cursor-pointer bg-rose-100/70 hover:bg-rose-200 px-2.5 py-1 rounded-lg transition-colors"
-            >
-              Ask AI <ArrowRight className="w-3.5 h-3.5" />
-            </button>
-          </div>
-        )}
-
         {/* Results Body */}
         <div className="overflow-y-auto p-4 space-y-5">
           {!results || query.trim() === '' ? (
             <div className="space-y-4">
               <div className="text-xs uppercase tracking-wider text-stone-400 font-bold px-1">
-                Suggested Questions & Topics:
+                Quick Search Ideas:
               </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                {SUGGESTED_QUERIES.map((q, idx) => (
+                {[
+                  'Black pork BBQ',
+                  'Tangerine farm',
+                  'Salt bread & bakeries',
+                  'Myeongdong shopping',
+                  'Gyeongbokgung palace',
+                  'Seongsu street fashion',
+                  'Tosokchon samgyetang',
+                  'Olive Young skincare'
+                ].map((tag, idx) => (
                   <button
                     key={idx}
                     onClick={() => {
-                      onAskAi(q);
-                      onClose();
+                      setQuery(tag);
                     }}
-                    className="p-3 text-left bg-stone-50 hover:bg-rose-50/70 border border-stone-200/80 hover:border-rose-200 rounded-2xl text-xs text-stone-800 transition-colors flex items-center justify-between group cursor-pointer"
+                    className="p-3 text-left bg-stone-50 hover:bg-rose-50 border border-stone-200/80 hover:border-rose-200 rounded-2xl text-xs text-stone-800 transition-colors flex items-center justify-between group cursor-pointer"
                   >
-                    <span className="font-medium group-hover:text-rose-900">{q}</span>
-                    <Sparkles className="w-3.5 h-3.5 text-stone-400 group-hover:text-rose-500 shrink-0 ml-2" />
+                    <span className="font-medium group-hover:text-rose-900">{tag}</span>
+                    <Search className="w-3.5 h-3.5 text-stone-400 group-hover:text-rose-500 shrink-0 ml-2" />
                   </button>
                 ))}
               </div>
             </div>
           ) : results.totalMatches === 0 ? (
             <div className="text-center py-10 space-y-3">
-              <p className="text-sm text-stone-600">No exact places found for "{query}".</p>
-              <button
-                onClick={() => {
-                  onAskAi(query);
-                  onClose();
-                }}
-                className="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold text-white bg-stone-900 rounded-xl hover:bg-stone-800 cursor-pointer shadow-xs"
-              >
-                <Sparkles className="w-3.5 h-3.5 text-rose-300" />
-                Ask Seoul AI Guide to synthesize an answer
-              </button>
+              <p className="text-sm text-stone-600">No exact matches found for "{query}".</p>
+              <p className="text-xs text-stone-400">Try searching for "Jeju", "Myeongdong", "BBQ", "Seongsu", or "Bread".</p>
             </div>
           ) : (
             <div className="space-y-6">
