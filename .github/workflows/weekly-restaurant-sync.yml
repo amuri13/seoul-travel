@@ -1,0 +1,49 @@
+name: Weekly Restaurant Discovery & Sync
+
+on:
+  schedule:
+    # Runs every Monday at 02:00 UTC (11:00 AM KST)
+    - cron: '0 2 * * 1'
+  workflow_dispatch: # Allows manual trigger from GitHub Actions tab
+
+jobs:
+  sync-restaurants:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run restaurant discovery and verification pipeline
+        env:
+          NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
+          NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
+        run: npx tsx scripts/sync-restaurants.ts
+
+      - name: Verify build compiles cleanly with new data
+        run: npm run build
+
+      - name: Commit and push changes if updated
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action Bot"
+          git add src/data/places.ts
+          if git diff --staged --quiet; then
+            echo "No new restaurants to commit this week."
+          else
+            git commit -m "chore(data): auto-sync newly discovered & verified restaurants [skip ci]"
+            git push
+          fi

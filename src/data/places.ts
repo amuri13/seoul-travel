@@ -2,6 +2,44 @@ import { Place } from '../types';
 
 export const PLACES_DATA: Place[] = [
   {
+    "id": "place-jeju-sinjungsangan-black-pork-3912",
+    "name": "Jeju Sinjungsangan Black Pork",
+    "koreanName": "신중산간 제주 흑돼지",
+    "category": "Korean BBQ",
+    "cuisine": "Jeju Black Pork Charcoal BBQ",
+    "neighbourhood": "Jeju Island",
+    "address": "142 Sallongnam-ro, Seogwipo-si, Jeju-do",
+    "koreanAddress": "제주특별자치도 서귀포시 산록남로 142",
+    "priceRange": "₩22,000 – ₩34,000 per person",
+    "priceLevel": "$",
+    "signatureDishes": [
+      "Thick-cut Aged Black Pork Neck (Moksal)",
+      "Jeju Pork Belly (Samgyeopsal)",
+      "Meljot Dipping Sauce"
+    ],
+    "knownFor": "Forest-facing contemporary black pork barbecue restaurant known for aged cuts and authentic fermented anchovy dipping sauce.",
+    "openingHours": "12:00 – 21:30 daily (Break 15:00–16:30)",
+    "usefulTips": "Pair the pork with cold hallabong citrus highball. Reservations recommended via CatchTable or arrive before 17:30.",
+    "dietary": {
+      "porkFree": false,
+      "vegetarianFriendly": false
+    },
+    "mealType": [
+      "Lunch",
+      "Dinner"
+    ],
+    "restaurantType": "Trendy Bistro",
+    "locationInfo": {
+      "nearestStation": "Jeju Rental Car / Seogwipo",
+      "exitNumber": "Free on-site parking",
+      "naverMapQuery": "신중산간 흑돼지",
+      "googleMapQuery": "Sinjungsangan Jeju Black Pork"
+    },
+    "source": "Curated Jeju Food Guide 2026",
+    "lastVerified": "2026-10",
+    "imageUrl": "/src/assets/images/seoul_korean_bbq_1790586940026.jpg"
+  },
+  {
     id: 'place-tosokchon',
     name: 'Tosokchon Samgyetang',
     koreanName: '토속촌 삼계탕',
