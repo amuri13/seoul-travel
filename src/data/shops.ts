@@ -26,7 +26,8 @@ export const SHOPS_DATA: Shop[] = [
       naverMapQuery: '올리브영 명동타운'
     },
     source: 'CJ Olive Young Official Global Flagship Portal',
-    lastVerified: '2026-08'
+    lastVerified: '2026-08',
+    imageUrl: 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=80'
   },
   {
     id: 'shop-tamburins-haus-dosan',
@@ -53,7 +54,8 @@ export const SHOPS_DATA: Shop[] = [
       naverMapQuery: '하우스도산'
     },
     source: 'IICOMBINED Flagship Retail Guide',
-    lastVerified: '2026-08'
+    lastVerified: '2026-08',
+    imageUrl: 'https://images.unsplash.com/photo-1616949755610-8c9bbc08f138?auto=format&fit=crop&w=800&q=80'
   },
   {
     id: 'shop-musinsa-hongdae',
@@ -80,7 +82,8 @@ export const SHOPS_DATA: Shop[] = [
       naverMapQuery: '무신사 스탠다드 홍대'
     },
     source: 'Musinsa Fashion Platform Retail Korea',
-    lastVerified: '2026-07'
+    lastVerified: '2026-07',
+    imageUrl: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80'
   },
   {
     id: 'shop-empty-seongsu',
@@ -107,7 +110,8 @@ export const SHOPS_DATA: Shop[] = [
       naverMapQuery: '엠프티 성수'
     },
     source: 'Seoul Fashion Week / Musinsa Experimental Concept Spaces',
-    lastVerified: '2026-08'
+    lastVerified: '2026-08',
+    imageUrl: 'https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=800&q=80'
   },
   {
     id: 'shop-the-hyundai-seoul',
@@ -134,7 +138,8 @@ export const SHOPS_DATA: Shop[] = [
       naverMapQuery: '더현대 서울'
     },
     source: 'Hyundai Department Store Group / Seoul Architectural Landmark',
-    lastVerified: '2026-08'
+    lastVerified: '2026-08',
+    imageUrl: 'https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?auto=format&fit=crop&w=800&q=80'
   },
   {
     id: 'shop-goto-mall',
@@ -160,7 +165,8 @@ export const SHOPS_DATA: Shop[] = [
       naverMapQuery: '고투몰 강남터미널지하쇼핑몰'
     },
     source: 'Seoul Metropolitan Underground Commerce Association',
-    lastVerified: '2026-06'
+    lastVerified: '2026-06',
+    imageUrl: 'https://images.unsplash.com/photo-1555529669-e69e7aa0ba9a?auto=format&fit=crop&w=800&q=80'
   },
   {
     id: 'shop-ssamziegil-insadong',
@@ -187,7 +193,8 @@ export const SHOPS_DATA: Shop[] = [
       naverMapQuery: '쌈지길 인사동'
     },
     source: 'Insadong Cultural Traditional Preservation Zone',
-    lastVerified: '2026-07'
+    lastVerified: '2026-07',
+    imageUrl: 'https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=800&q=80'
   },
   {
     id: 'shop-dongmyo-flea',
@@ -214,7 +221,8 @@ export const SHOPS_DATA: Shop[] = [
       naverMapQuery: '동묘 벼룩시장'
     },
     source: 'Seoul Vintage Culture Archive / Jongno-gu Cultural Tourism',
-    lastVerified: '2026-06'
+    lastVerified: '2026-06',
+    imageUrl: 'https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=800&q=80'
   },
   {
     id: 'shop-withmuu-hongdae',
@@ -241,7 +249,8 @@ export const SHOPS_DATA: Shop[] = [
       naverMapQuery: '위드뮤 홍대점'
     },
     source: 'Withmuu Official Retail Store / Hanteo Chart Certified Store',
-    lastVerified: '2026-07'
+    lastVerified: '2026-07',
+    imageUrl: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80'
   },
   {
     id: 'shop-stand-oil-seongsu',
@@ -268,6 +277,7 @@ export const SHOPS_DATA: Shop[] = [
       naverMapQuery: '스탠드오일 성수 플래그십스토어'
     },
     source: 'Stand Oil Korea Brand Flagship',
-    lastVerified: '2026-08'
+    lastVerified: '2026-08',
+    imageUrl: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80'
   }
 ];
