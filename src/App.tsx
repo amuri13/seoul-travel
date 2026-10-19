@@ -15,7 +15,7 @@ import { SHOPS_DATA } from './data/shops';
 import { NEIGHBOURHOODS_DATA } from './data/neighborhoods';
 import { FAMILY_ITINERARY } from './data/itinerary';
 import { Place, Shop, Neighbourhood } from './types';
-import { SEOUL_IMAGES, getImageForCategory } from './data/images';
+import { SEOUL_IMAGES, getImageForCategory, handleImageError } from './data/images';
 import { ArrowRight, Sparkles, MapPin, Utensils, ShoppingBag, Train, BookOpen, ExternalLink, ShieldCheck, Flame, ChevronRight, Calendar, Heart, Hotel, Plane } from 'lucide-react';
 
 export default function App() {
@@ -283,6 +283,7 @@ export default function App() {
                             <img
                               src={photo}
                               alt={place.name}
+                              onError={(e) => handleImageError(e, place.category)}
                               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                               loading="lazy"
                             />
@@ -368,6 +369,7 @@ export default function App() {
                             <img
                               src={photo}
                               alt={shop.name}
+                              onError={(e) => handleImageError(e, shop.category)}
                               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                               loading="lazy"
                             />

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Place, Shop } from '../types';
-import { SEOUL_IMAGES, getImageForCategory } from '../data/images';
+import { SEOUL_IMAGES, getImageForCategory, handleImageError } from '../data/images';
 import { X, MapPin, Clock, ExternalLink, ShieldCheck, Utensils, ShoppingBag, Sparkles, Navigation, Flame, CheckCircle2 } from 'lucide-react';
 
 interface PlaceDetailModalProps {
@@ -37,6 +37,7 @@ export const PlaceDetailModal: React.FC<PlaceDetailModalProps> = ({ item, type, 
           <img
             src={imageSrc}
             alt={item.name}
+            onError={(e) => handleImageError(e, isPlace ? place!.category : shop!.category)}
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-stone-950/90 via-stone-950/40 to-black/30" />

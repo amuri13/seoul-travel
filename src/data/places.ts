@@ -37,7 +37,7 @@ export const PLACES_DATA: Place[] = [
     },
     "source": "Curated Jeju Food Guide 2026",
     "lastVerified": "2026-10",
-    "imageUrl": "/src/assets/images/seoul_korean_bbq_1790586940026.jpg"
+    "imageUrl": "/src/assets/images/seoul_korean_bbq_1790587773105.jpg"
   },
   {
     id: 'place-tosokchon',

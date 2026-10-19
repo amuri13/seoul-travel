@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { Shop, ShopCategory, PriceLevel } from '../types';
 import { SHOPS_DATA } from '../data/shops';
-import { SEOUL_IMAGES, getImageForCategory } from '../data/images';
+import { SEOUL_IMAGES, getImageForCategory, handleImageError } from '../data/images';
 import { ShoppingBag, MapPin, Clock, Tag, ExternalLink, Filter, X, Sparkles, ChevronRight, CheckCircle2 } from 'lucide-react';
 
 interface ShopSectionProps {
@@ -226,6 +226,7 @@ export const ShopSection: React.FC<ShopSectionProps> = ({
                       <img
                         src={imageSrc}
                         alt={shop.name}
+                        onError={(e) => handleImageError(e, shop.category)}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         loading="lazy"
                       />

@@ -183,7 +183,7 @@ async function discoverCandidates(): Promise<CandidateRestaurant[]> {
         verifiedOperating: true,
         reviewCount: 420,
         rating: 4.7,
-        imageUrl: '/src/assets/images/seoul_korean_bbq_1790586940026.jpg',
+        imageUrl: '/src/assets/images/seoul_korean_bbq_1790587773105.jpg',
       },
     ];
 

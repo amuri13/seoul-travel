@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { Place, CuisineCategory, PriceLevel } from '../types';
 import { PLACES_DATA } from '../data/places';
-import { SEOUL_IMAGES, getImageForCategory } from '../data/images';
+import { SEOUL_IMAGES, getImageForCategory, handleImageError } from '../data/images';
 import { Utensils, MapPin, Clock, ExternalLink, Filter, X, Sparkles, Flame, Dices, ChevronRight } from 'lucide-react';
 
 interface EatSectionProps {
@@ -318,6 +318,7 @@ export const EatSection: React.FC<EatSectionProps> = ({
                       <img
                         src={imageSrc}
                         alt={place.name}
+                        onError={(e) => handleImageError(e, place.category)}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         loading="lazy"
                       />

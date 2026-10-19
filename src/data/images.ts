@@ -34,7 +34,7 @@ export const SEOUL_IMAGES = {
   jejuTangerineFarm,
   jejuCliff,
 
-  // Curated category & area visuals
+  // Curated category & area visuals (Verified live & high-resolution)
   bibimbap: 'https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=800&q=80',
   ginsengChicken: 'https://images.unsplash.com/photo-1547928576-a4a33237cbc3?auto=format&fit=crop&w=800&q=80',
   noodles: 'https://images.unsplash.com/photo-1612927601601-6638404737ce?auto=format&fit=crop&w=800&q=80',
@@ -43,30 +43,53 @@ export const SEOUL_IMAGES = {
   itaewon: 'https://images.unsplash.com/photo-1546874177-9e664107314e?auto=format&fit=crop&w=800&q=80',
   insadong: 'https://images.unsplash.com/photo-1583037189850-1921ae7c6c22?auto=format&fit=crop&w=800&q=80',
   hanRiver: 'https://images.unsplash.com/photo-1517154421773-0529f29ea451?auto=format&fit=crop&w=800&q=80',
-  nightView: 'https://images.unsplash.com/photo-1506079914017-86583605371b?auto=format&fit=crop&w=800&q=80',
+  nightView: 'https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=800&q=80',
   kpop: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80',
   tmoneyCard: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&w=800&q=80',
-  simCard: 'https://images.unsplash.com/photo-1562907550-096d3bf9b25d?auto=format&fit=crop&w=800&q=80',
+  simCard: 'https://images.unsplash.com/photo-1584438784894-089d6a62b8fa?auto=format&fit=crop&w=800&q=80',
   convenienceStore: 'https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&w=800&q=80',
   jejuCoast: 'https://images.unsplash.com/photo-1578637387939-43c525550085?auto=format&fit=crop&w=800&q=80',
+  bakeryPastry: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80',
+  manduDumplings: 'https://images.unsplash.com/photo-1541696432-82c6da8ce7bf?auto=format&fit=crop&w=800&q=80',
+  koreanTemple: 'https://images.unsplash.com/photo-1548115184-bc6544d06a58?auto=format&fit=crop&w=800&q=80',
 };
 
-// Helper to get fallback image by category or tags
+// Safe fallback image constant (bundled asset)
+export const FALLBACK_IMAGE = foodSpread;
+
+// Helper to get image by category or tags with guaranteed fallbacks
 export function getImageForCategory(cat: string, fallback = foodSpread): string {
+  if (!cat) return fallback;
   const c = cat.toLowerCase();
-  if (c.includes('jeju') || c.includes('rainbow')) return jejuRainbowRoad;
+  if (c.includes('jeju') || c.includes('rainbow') || c.includes('seogwipo')) return jejuRainbowRoad;
   if (c.includes('tangerine') || c.includes('orange')) return jejuTangerineFarm;
-  if (c.includes('cliff') || c.includes('jusangjeolli')) return jejuCliff;
-  if (c.includes('bbq') || c.includes('pork') || c.includes('beef')) return koreanBbq;
-  if (c.includes('chicken') || c.includes('chimaek')) return koreanChimaek;
-  if (c.includes('street') || c.includes('snack') || c.includes('tteokbokki') || c.includes('market')) return streetFood;
-  if (c.includes('cafe') || c.includes('coffee') || c.includes('bakery') || c.includes('dessert')) return cafeInterior;
+  if (c.includes('cliff') || c.includes('jusangjeolli') || c.includes('coast') || c.includes('ocean')) return jejuCliff;
+  if (c.includes('bbq') || c.includes('pork') || c.includes('beef') || c.includes('samgyeopsal')) return koreanBbq;
+  if (c.includes('chicken') || c.includes('chimaek') || c.includes('fried chicken')) return koreanChimaek;
+  if (c.includes('street') || c.includes('snack') || c.includes('market') || c.includes('bindaetteok')) return streetFood;
+  if (c.includes('tteokbokki')) return SEOUL_IMAGES.tteokbokki;
+  if (c.includes('ginseng') || c.includes('samgyetang')) return SEOUL_IMAGES.ginsengChicken;
+  if (c.includes('noodle') || c.includes('kalguksu') || c.includes('naengmyeon')) return SEOUL_IMAGES.noodles;
+  if (c.includes('bibimbap')) return SEOUL_IMAGES.bibimbap;
+  if (c.includes('cafe') || c.includes('coffee') || c.includes('bakery') || c.includes('dessert') || c.includes('bread')) return cafeInterior;
   if (c.includes('beauty') || c.includes('skin') || c.includes('cosmetic') || c.includes('olive young')) return skincareShop;
   if (c.includes('fashion') || c.includes('streetwear') || c.includes('brand') || c.includes('luxury') || c.includes('designer')) return fashionStore;
   if (c.includes('subway') || c.includes('bus') || c.includes('train') || c.includes('airport') || c.includes('transit')) return metroTransit;
   if (c.includes('myeongdong')) return myeongdongStreet;
   if (c.includes('hongdae') || c.includes('youth') || c.includes('nightlife')) return hongdaeYouth;
   if (c.includes('seongsu')) return seongsuStreet;
-  if (c.includes('bukchon') || c.includes('hanok') || c.includes('insadong') || c.includes('palace')) return bukchonHanok;
+  if (c.includes('bukchon') || c.includes('hanok') || c.includes('insadong') || c.includes('palace') || c.includes('temple')) return bukchonHanok;
+  if (c.includes('gangnam') || c.includes('apgujeong')) return SEOUL_IMAGES.gangnam;
+  if (c.includes('itaewon') || c.includes('hannam')) return SEOUL_IMAGES.itaewon;
+  if (c.includes('kpop') || c.includes('album')) return SEOUL_IMAGES.kpop;
   return fallback;
+}
+
+// Global image error handler for <img> elements: replaces broken src with contextual fallback
+export function handleImageError(e: React.SyntheticEvent<HTMLImageElement, Event>, category?: string) {
+  const target = e.currentTarget;
+  const fallback = category ? getImageForCategory(category) : FALLBACK_IMAGE;
+  if (target.src !== fallback) {
+    target.src = fallback;
+  }
 }
