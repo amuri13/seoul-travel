@@ -279,5 +279,33 @@ export const SHOPS_DATA: Shop[] = [
     source: 'Stand Oil Korea Brand Flagship',
     lastVerified: '2026-08',
     imageUrl: 'https://images.unsplash.com/photo-1584917865442-de89df76afd3?auto=format&fit=crop&w=800&q=80'
+  },
+  {
+    id: 'shop-ready-young-pharmacy-myeongdong',
+    name: 'Ready Young Pharmacy (Myeongdong Town)',
+    koreanName: '명동레디영약국 (레디영약국)',
+    category: 'Korean Skincare & Beauty',
+    neighbourhood: 'Myeongdong',
+    address: '7 Myeongdong 8na-gil, Jung-gu, Seoul',
+    priceLevel: '$$',
+    whatToBuy: [
+      'PDRN & Rejuran-style regenerative derma-creams',
+      'Noscana Scar Gel & Dongsung Rannce dark-spot melanin creams',
+      'Impactamin & Ibadon high-potency Vitamin B active energy complexes',
+      'Korean herbal joint relief and muscular pain patches (Pas/파스)'
+    ],
+    koreanBrands: ['Dong-A ST', 'Daewoong Pharmaceutical', 'Ildong', 'Dongsung', 'Green Cross'],
+    openingHours: '10:00 – 00:30 (Midnight) daily',
+    whyVisit: 'The go-to tourist health & derma-pharmacy in Myeongdong. Bridges medical-grade pharmacy treatments with viral K-beauty derma skincare, with English/multilingual staff and instant tax refunds.',
+    usefulTips: 'Open late until 12:30 AM! Perfect for visiting right after dinner or evening street shopping in Myeongdong. Instant tax refund available on-site with foreign passport.',
+    taxRefundInfo: 'Instant Tax Refund processed on-site for international passports on qualifying purchases.',
+    locationInfo: {
+      nearestStation: 'Myeongdong Station (Line 4)',
+      exitNumber: 'Exit 6 (approx. 150m walk towards Myeongdong 8na-gil)',
+      naverMapQuery: '명동레디영약국'
+    },
+    source: 'Seoul Healthcare & Pharmacy Tourist Guide',
+    lastVerified: '2026-10',
+    imageUrl: 'https://images.unsplash.com/photo-1576602976047-174e57a47881?auto=format&fit=crop&w=800&q=80'
   }
 ];
