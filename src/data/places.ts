@@ -915,24 +915,25 @@ export const PLACES_DATA: Place[] = [
     "imageUrl": "/src/assets/images/seoul_korean_chimaek_1790587787244.jpg"
   },
   {
-    "id": "place-cafe-onion-anguk",
-    "name": "Cafe Onion Anguk",
-    "koreanName": "어니언 안국점",
+    "id": "place-cafe-onion-myeongdong",
+    "name": "Cafe Onion Myeongdong",
+    "koreanName": "어니언 명동점",
     "category": "Cafes & Bakeries",
-    "cuisine": "Hanok Specialty Coffee & Artisanal Bakery",
-    "neighbourhood": "Bukchon / Insadong",
-    "address": "5 Gyedong-gil, Jongno-gu, Seoul",
-    "koreanAddress": "서울특별시 종로구 계동길 5",
+    "cuisine": "Artisanal Bakery & Specialty Coffee",
+    "neighbourhood": "Myeongdong",
+    "address": "35-18 Myeongdong 10-gil, Jung-gu, Seoul",
+    "koreanAddress": "서울특별시 중구 명동10길 35-18",
     "priceRange": "₩5,500 – ₩15,000",
     "priceLevel": "$$",
     "signatureDishes": [
       "Pandoro (Mountain of powdered sugar on brioche)",
+      "Salt Bread (Sogeumppang)",
       "Avocado Pollack Roe Baguette",
-      "Cold Brew Injeolmi Latte"
+      "Specialty Filter Drip Coffee & Einspänner"
     ],
-    "knownFor": "Majestic Joseon Hanok estate converted into a celebrated bakery cafe. Heated wooden ondol floors and peaceful open courtyards.",
-    "openingHours": "07:00 – 22:00 (Weekdays) / 09:00 – 22:00 (Weekends)",
-    "usefulTips": "Family vacation Day 7 afternoon stop after Gyeongbokgung and Bukchon Hanok! Remove shoes to sit on heated cushions on the wooden Hanok veranda.",
+    "knownFor": "The newly opened flagship outpost of Seoul’s cult bakery brand right in the heart of Myeongdong, featuring sleek contemporary industrial architecture, fresh hourly pastries, and their iconic sugar-capped Pandoro.",
+    "openingHours": "08:00 – 20:00 daily",
+    "usefulTips": "Located just steps from Stanford Hotel Myeongdong (approx. 5-minute walk) and Myeongdong Station Exit 8! Ideal for a warm afternoon pastry and coffee recharge right after hotel check-in.",
     "dietary": {
       "vegetarianFriendly": true,
       "porkFree": true
@@ -941,15 +942,15 @@ export const PLACES_DATA: Place[] = [
       "Breakfast",
       "Cafe/Snack"
     ],
-    "restaurantType": "Traditional Hanok",
+    "restaurantType": "Trendy Bistro",
     "locationInfo": {
-      "nearestStation": "Anguk Station (Line 3)",
-      "exitNumber": "Exit 3 (approx. 50m walk)",
-      "naverMapQuery": "어니언 안국",
-      "googleMapQuery": "Cafe Onion Anguk Seoul"
+      "nearestStation": "Myeongdong Station (Line 4)",
+      "exitNumber": "Exit 8 (approx. 3-minute walk / 180m)",
+      "naverMapQuery": "어니언 명동",
+      "googleMapQuery": "Cafe Onion Myeongdong Seoul"
     },
-    "source": "Family Vacation Itinerary / Seoul Cafe Guide",
-    "lastVerified": "2026-09",
+    "source": "Seoul Cafe Guide 2026 / Family Vacation Itinerary",
+    "lastVerified": "2026-10",
     "imageUrl": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80"
   }
 ];

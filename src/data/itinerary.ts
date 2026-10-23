@@ -265,11 +265,11 @@ export const FAMILY_ITINERARY: DayItinerary[] = [
       },
       {
         time: '5:00 PM',
-        activity: 'Cafe Onion (Coffee & Bakery Break)',
-        koreanName: '어니언 (카페 어니언)',
-        notes: 'Iconic Seoul bakery cafe renowned for signature sugar-powdered Pandoro pastries, artisanal breads, and specialty drip coffee—the perfect warm afternoon tea break after your flight.',
+        activity: 'Cafe Onion Myeongdong (Coffee & Bakery Break)',
+        koreanName: '어니언 명동점',
+        notes: 'The newly opened flagship outpost of Seoul’s cult bakery brand right in Myeongdong (near Exit 8). Famous for sugar-dusted Pandoro, golden salt bread, and specialty filter drip coffee—just a 5-minute stroll from Stanford Hotel!',
         category: 'food',
-        mapQuery: '카페 어니언',
+        mapQuery: '어니언 명동',
       },
       {
         time: '7:00 PM',
